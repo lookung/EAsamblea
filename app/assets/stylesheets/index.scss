@@ -1,18 +1,20 @@
-.contents2{
-  width: 60%;
-  max-width: 600px;
-  height: 100px;
-  background-color: gray;
-  margin: 20px auto 0;
+article{
+  background-color: #E0E0E0;
+  padding: 10px;
+  margin-bottom: 1px;
+  margin-top: 1px;
+  margin: 10px auto;
+  width: 600px;
+  height: 130px;
 }
-
-.title{
-  background-color: yellow;
-  width: 80%;
-  height: 40px;
-  float: right;
+figure img{
+  width: 100%;
+  height: 100%;
 }
-
-h2{
-margin: 20px 320px 0;
+.glyphicon-folder-open,
+.glyphicon-user,
+.glyphicon-calendar,
+.glyphicon-eye-open,
+.glyphicon-comment{
+  padding: 5px;
 }
