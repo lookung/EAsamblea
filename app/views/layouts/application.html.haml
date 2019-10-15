@@ -8,4 +8,26 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    = yield
+    
+%nav.navbar.navbar-expand-xl.nav_area.sticky
+  .container
+    .logo
+      %a.logo-light{:href => ""}EAsamblea
+      %a.logo-dark{:href => ""} EAsamblea
+    #navbarNav.collapse.navbar-collapse
+      %ul.navbar-nav.ml-auto.navbar-center.main_menu.onepage_nav
+        %li.nav-item.active
+          %a.nav-link{:href => "#home"} Home
+        %li.nav-item
+          %a.nav-link{:href => "#about"} About
+        %li.nav-item
+          %a.nav-link{:href => "/posts"} timeline
+        %li.nav-item
+          %a.nav-link{:href => "#portfolio"} portfolio
+        %li.nav-item
+          %a.nav-link{:href => "#client"} Testimonial
+        %li.nav-item
+          %a.nav-link{:href => "#blog"} Blog
+        %li.nav-item
+          %a.nav-link{:href => "#contact"} Contact
+= yield
