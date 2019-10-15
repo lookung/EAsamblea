@@ -1,5 +1,6 @@
 .container
   .row
+    %h2 TimeLine
     .col-lg-8.col-md-8.col-sm-9.col-xs-12
     - @posts.each do |post|
       %article
@@ -10,7 +11,6 @@
           .col-sm-6.col-md-8
             %span.label.label-default.pull-right
             %h3= link_to(post.title, "/posts/#{post.id}")
-            
             %section
               = succeed "user名" do
                 %i.glyphicon.glyphicon-user
