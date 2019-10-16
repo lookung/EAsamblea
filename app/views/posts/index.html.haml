@@ -7,14 +7,13 @@
         .row
           .col-sm-6.col-md-4
             %figure
-              %img{:src => "GettyImages-522585140.jpg"}/
+              %img{:src => post.user.image.url}/
           .col-sm-6.col-md-8
             %span.label.label-default.pull-right
             %h3= link_to(post.title, "/posts/#{post.id}")
             %section
-              = succeed "user名" do
+              = post.user.nickname do
                 %i.glyphicon.glyphicon-user
               = post.created_at do
                 %i.glyphicon.glyphicon-eye-open
   = paginate(@posts)
-
