@@ -16,10 +16,11 @@
       %a.logo-dark{:href => "/"} EAsamblea
     #navbarNav.collapse.navbar-collapse
       %ul.navbar-nav.ml-auto.navbar-center.main_menu.onepage_nav
+      
         %li.nav-item.active
           %a.nav-link{:href => "#home"} Home
         %li.nav-item
-          %a.nav-link{:href => "#about"} About
+          %a.nav-link{:href => "/users/#{current_user.id}"} マイページ
         %li.nav-item
           %a.nav-link{:href => "/posts"} timeline
       - if user_signed_in?
