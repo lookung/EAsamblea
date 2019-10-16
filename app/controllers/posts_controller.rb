@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(post_params)
+    Post.create(title: post_params[:title], text: post_params[:text], user_id: current_user.id)
   end
 
   def new
