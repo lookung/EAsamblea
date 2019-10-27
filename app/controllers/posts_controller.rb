@@ -4,6 +4,8 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post = Post.find(params[:id])
+    @comments = @post.comments.includes(:user)
   end
 
   def create
@@ -12,6 +14,11 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+  end
+
+  def show
+    @post = Post.find(params[:id])
+    @comments = @post.comments.includes(:user)
   end
 
   def destroy
