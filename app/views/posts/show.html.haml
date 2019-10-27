@@ -1,1 +1,32 @@
-%p　こんにちは
+%article
+  .row
+    .col-sm-6.col-md-4
+      %figure
+        %img{:src => @post.user.image.url}/
+    .col-sm-6.col-md-8
+      %ul.more_list
+        %li
+          = link_to '削除', "/posts/#{@post.id}", method: :delete
+        %li
+          = link_to '編集', "/posts/#{@post.id}/edit", method: :get
+      %span.label-default.pull-right
+      %h3= link_to(@post.title, "/posts/#{@post.id}")
+      %section
+        = @post.user.nickname do
+          %i.glyphicon.glyphicon-user
+        = @post.text do
+          %i.glyphicon.glyphicon-user
+
+.container
+  - if current_user
+    = form_tag("/posts/#{@post.id}/comments", method: :post) do
+      %textarea{:cols => "30", :name => "text", :placeholder => "コメントする", :rows => "2"}
+      %input{:type => "submit", :value => "SENT"}/
+.comments
+  %h4 ＜コメント一覧＞
+  - if @comments
+    - @comments.each do |comment|
+      %p
+        %strong
+          = link_to comment.user.nickname, "/users/#{comment.user_id}"
+        = comment.text
