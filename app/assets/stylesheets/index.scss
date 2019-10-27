@@ -7,8 +7,21 @@ article{
   width: 600px;
   height: 130px;
 }
+
 figure img{
   width: 40%;
   height: 40%;
   object-fit: cover;
+}
+
+ul more_list{
+  float: right;
+}
+
+span label-default.pull-right{
+  float: right;
+}
+
+li {
+  float: right;
 }

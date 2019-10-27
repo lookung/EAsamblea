@@ -1,0 +1,6 @@
+.contents-new
+  = form_tag("/posts/#{@post.id}", method: :patch) do
+    %h3 編集する
+    %textarea{:autofocus => "true", :name => "title", :placeholder => "Title", :type => "text"}= @post.title
+    %textarea{:cols => "20", :name => "text", :placeholder => "text", :rows => "5"}= @post.text
+    %input{:type => "submit", :value => "SENT"}/
