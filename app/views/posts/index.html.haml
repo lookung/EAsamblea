@@ -1,3 +1,4 @@
+
 .container
   .row
     %h2 TimeLine
@@ -10,15 +11,17 @@
               %img{:src => post.user.image.url}/
           .col-sm-6.col-md-8
             %ul.more_list
+            - if user_signed_in? && (current_user.id==post.user_id)
               %li
                 = link_to '削除', "/posts/#{post.id}", method: :delete
               %li
                 = link_to '編集', "/posts/#{post.id}/edit", method: :get
             %span.label-default.pull-right
             %h3= link_to(post.title, "/posts/#{post.id}")
-            %section
+            %section           
               = post.user.nickname do
                 %i.glyphicon.glyphicon-user
               = post.created_at do
                 %i.glyphicon.glyphicon-eye-open
+              = render "likes/like", post: post
   = paginate(@posts)
