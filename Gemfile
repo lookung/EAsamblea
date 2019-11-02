@@ -64,7 +64,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml-rails'
 gem 'pry-rails'
 gem 'pry-byebug'
-gem 'bootstrap'
+gem "bootstrap", ">= 4.3.1"
 gem 'kaminari'
 gem 'devise'
 gem 'carrierwave'
