@@ -68,3 +68,6 @@ gem 'bootstrap'
 gem 'kaminari'
 gem 'devise'
 gem 'carrierwave'
+gem 'counter_culture', '~> 1.8'
+gem 'font-awesome-sass', '~> 5.4.1'
+
