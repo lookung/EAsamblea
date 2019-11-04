@@ -7,29 +7,28 @@
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-  %body
     
-%nav.navbar.navbar-expand-xl.nav_area.sticky
-  .container
-    .logo
-      %a.logo-light{:href => "/"}EAsamblea
-      %a.logo-dark{:href => "/"} EAsamblea
-    #navbarNav.collapse.navbar-collapse
-      %ul.navbar-nav.ml-auto.navbar-center.main_menu.onepage_nav
-      
-        %li.nav-item.active
-          %a.nav-link{:href => "#home"} Home
-        %li.nav-item
-          %a.nav-link{:href => "/posts"} timeline
-      - if user_signed_in?
-        %li.nav-item
+    
+    %script{:src => "//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"}
+    %script{:src => "//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"}
+
+  %body
+    %nav.navbar.navbar-expand-lg.navbar-light.bg-light
+      %a.navbar-brand{:href => "/"} EAsamblea
+      %button.navbar-toggler{"aria-controls" => "navbarNav", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNav", "data-toggle" => "collapse", :type => "button"}
+        %span.navbar-toggler-icon
+      #navbarNav.collapse.navbar-collapse
+        %ul.navbar-nav
+          %li.nav-item.active
+            %a.nav-link{:href => "/"}TimeLine
+        - if user_signed_in?
+          %li.nav-item
           = link_to "ログアウト", destroy_user_session_path, method: :delete
-          %a.post{:href => "/posts/new"} 投稿する
+          %a.nav-link{:href => "/posts/new"} 投稿する
           %li.nav-item
           %a.nav-link{:href => "/users/#{current_user.id}"} マイページ
-      - else
-        %li.nav-item
+        - else
+          %li.nav-item
           = link_to "ログイン", new_user_session_path, class: 'post'
           = link_to "新規登録", new_user_registration_path, class: 'post'
-
 = yield

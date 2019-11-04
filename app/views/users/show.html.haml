@@ -9,11 +9,43 @@
             %figure
               %img{:src => post.user.image.url}/
           .col-sm-6.col-md-8
-            %span.label.label-default.pull-right
-            %h3= link_to(post.title, "/posts/#{post.id}")
+            %ul.more_list
+              %li
+                = link_to '削除', "/posts/#{post.id}", method: :delete
+              %li
+                = link_to '編集', "/posts/#{post.id}/edit", method: :get
             %section
               = post.user.nickname do
                 %i.glyphicon.glyphicon-user
               = post.created_at do
                 %i.glyphicon.glyphicon-eye-open
-  = paginate(@posts)
+= paginate(@posts)
+
+%link{:href => "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css", :rel => "stylesheet"}/
+.card
+  .box
+    .img
+      %img{:src => @image}/
+    %h2
+      = current_user.nickname
+      %br/
+      %span 肩書き
+    %p
+      自己紹介
+    %span
+      %ul
+        %li
+          %a{:href => "#"}
+            %i.fa.fa-facebook{"aria-hidden" => "true"}
+        %li
+          %a{:href => "#"}
+            %i.fa.fa-twitter{"aria-hidden" => "true"}
+        %li
+          %a{:href => "#"}
+            %i.fa.fa-google-plus{"aria-hidden" => "true"}
+        %li
+          %a{:href => "#"}
+            %i.fa.fa-linkedin{"aria-hidden" => "true"}
+        %li
+          %a{:href => "#"}
+            %i.fa.fa-instagram{"aria-hidden" => "true"}
