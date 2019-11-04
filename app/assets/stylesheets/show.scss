@@ -24,4 +24,24 @@ span label-default.pull-right{
 
 li {
   float: right;
+  list-style: none;
+}
+
+textarea{
+  text-align: center;
+  display: block
+}
+
+.comments{
+  padding: 10px;
+  margin-bottom: 1px;
+  margin-top: 1px;
+  margin: 10px auto;
+}
+
+.container{
+  padding: 10px;
+  margin-bottom: 1px;
+  margin-top: 1px;
+  margin: 10px auto;
 }
