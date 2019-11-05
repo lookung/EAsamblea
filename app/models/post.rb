@@ -6,6 +6,8 @@ has_many :iine_users, through: :likes, source: :user
 
   def iine?(user)
     iine_users.include?(user)
+    ##イイねuserにuserオブジェクトが含まれていたら
+    
   end
 
   def iine(user)

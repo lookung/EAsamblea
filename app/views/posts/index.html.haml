@@ -3,7 +3,7 @@
     %h2 TimeLine
     .col-lg-8.col-md-8.col-sm-9.col-xs-12
     - @posts.each do |post|
-      %article
+      %article(id="post-#{post.id}")
         .row
           .col-sm-6.col-md-4
             %figure
