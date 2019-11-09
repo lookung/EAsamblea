@@ -5,6 +5,9 @@ application up and running.
 
 Things you may want to cover:
 
+テストユーザー：　test
+password：　111111
+
 * Ruby version
 
 * System dependencies

@@ -25,7 +25,10 @@ span label-default.pull-right{
 body{
   background-image: url(https://number.ismcdn.jp/mwimgs/8/e/-/img_8e950b51cfdca6004929b2c5fb6d326b312110.jpg);
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 h2{
