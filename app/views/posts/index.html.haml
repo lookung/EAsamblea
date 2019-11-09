@@ -17,10 +17,11 @@
                 = link_to '編集', "/posts/#{post.id}/edit", method: :get
             %span.label-default.pull-right
             %h3= link_to(post.title, "/posts/#{post.id}")
-            %section           
-              = post.user.nickname do
+            %section
+              = link_to "/users/#{post.user_id}" do
                 %i.glyphicon.glyphicon-user
+                = post.user.nickname
               = post.created_at do
                 %i.glyphicon.glyphicon-eye-open
               = render "likes/like", post: post
-  = paginate(@posts)
+= paginate(@posts)

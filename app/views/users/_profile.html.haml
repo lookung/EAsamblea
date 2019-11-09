@@ -1,0 +1,29 @@
+%link{:href => "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css", :rel => "stylesheet"}/
+.card
+  .box
+    .img
+      %img{:src => @user.image.url}/
+    %h2
+      = @user.nickname
+      %br/
+      %span 
+        = render "follows/follow", user: @user
+    %p
+      自己紹介
+    %span
+      %ul
+        %li
+          %a{:href => "#"}
+            %i.fa.fa-facebook{"aria-hidden" => "true"}
+        %li
+          %a{:href => "#"}
+            %i.fa.fa-twitter{"aria-hidden" => "true"}
+        %li
+          %a{:href => "#"}
+            %i.fa.fa-google-plus{"aria-hidden" => "true"}
+        %li
+          %a{:href => "#"}
+            %i.fa.fa-linkedin{"aria-hidden" => "true"}
+        %li
+          %a{:href => "#"}
+            %i.fa.fa-instagram{"aria-hidden" => "true"}
